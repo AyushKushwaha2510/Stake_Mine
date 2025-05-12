@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #313131;
+}
+
+.title {
+    background-color: #949494;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #009005;
+    font-family: 'Rancho', cursive;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 3.84px;
+}
+
+.content {
+    position: relative;
+    background-color: azure;
+    width: calc(min(65vw, 1000px));
+    justify-content: center;
+    margin: 50px auto;
+    height: calc(min(78vh, 1154px));
+
+}
+
+.game-settings {
+    background-color: #080707;
+    width: 28%;
+    height: calc(min(78vh, 1154px));
+    display: flex;
+    flex-direction: column;
+}
+
+.game-settings-title {
+    position: relative;
+    background-color: #06E76B;
+    width: 90%;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 0px auto;
+    top: 20px;
+    font-family: "Nova Square", sans-serif;
+    color: #181F1A;
+    text-align: center;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.game-settings-content {
+    position: relative;
+    /* background-color: antiquewhite; */
+    top: 200px;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+
+    text-align: center;
+    font-family: "Pangolin", cursive;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.96px;
+}
+
+.game-settings-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.game-settings-item input {
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #8E8E8E;
+    background: #444;
+    box-shadow: 0px -4px 5.1px 1px rgba(123, 123, 123, 0.25) inset;
+    color: #bebfbf;
+    font-family: "Pangolin", cursive;
+    font-size: 16px;
+    text-align: center;
+}
+
+.start-game {
+    position: relative;
+    top: 140px;
+    /* background-color: #06E76B; */
+    display: flex;
+    flex-direction: column;
+    margin: auto 10px;
+}
+
+.start-game button {
+    background-color: #802828;
+    /* border: 2px solid #802828; */
+    border: none;
+    width: 90%;
+    padding: 10px;
+    /* border-radius: 50px; */
+    margin: 10px auto;
+    font-family: "Nova Square", sans-serif;
+    color: #F5F5F5;
+    text-align: center;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+.start-game button:hover {
+    background-color: #06E76B;
+    color: #181F1A;
+    cursor: pointer;
+}
+
+
+.game {
+    background-color: #1C1C1C;
+    width: 72%;
+    height: calc(min(78vh, 1154px));
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+
+.game-content {
+    background-color: #262626;
+    width: 87.5% +10px;
+    height: 80.84%+10px;
+    margin: 42px auto;
+    /* margin-bottom:5px */
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    padding: 10px;
+}
+
+
+.game span {
+    color: #FFF;
+    text-align: center;
+    font-family: "Nova Square", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.6px;
+    margin-top: 0px;
+    position: absolute;
+    bottom: 10px;
+    left: 150px
+}
+
+
+
+.game-content div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 12.5px;
+    background-color: #6E6E6E;
+    /* fill: #6E6E6E; */
+    box-shadow: -2px -2px 9.4px 3px rgba(0, 0, 0, 0.25) inset;
+}
