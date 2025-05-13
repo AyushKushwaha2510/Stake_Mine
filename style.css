@@ -49,6 +49,7 @@ body {
     height: calc(min(78vh, 1154px));
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .game-settings-title {
@@ -70,7 +71,7 @@ body {
 }
 
 .game-settings-content {
-    position: relative;
+    position: absolute;
     /* background-color: antiquewhite; */
     top: 200px;
     height: auto;
@@ -110,12 +111,14 @@ body {
 }
 
 .start-game {
-    position: relative;
-    top: 140px;
+    position: absolute;
+    bottom: 0px;
     /* background-color: #06E76B; */
     display: flex;
     flex-direction: column;
-    margin: auto 10px;
+    width: 90%;
+    margin: 10px auto;
+    margin-left: 15px;
 }
 
 .start-game button {
@@ -136,6 +139,7 @@ body {
     line-height: normal;
 
 }
+
 .start-game button:hover {
     background-color: #06E76B;
     color: #181F1A;
@@ -157,9 +161,10 @@ body {
 }
 
 .game-content {
-    background-color: #262626;
+    background-color: rgb(38, 38, 38);
     width: 87.5% +10px;
-    height: 80.84%+10px;
+    width: calc(min(87.5%, 600px));
+    height: calc(min(85%, 600px));
     margin: 42px auto;
     /* margin-bottom:5px */
     position: relative;
@@ -167,6 +172,8 @@ body {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     padding: 10px;
+    /* padding-right: 10px; */
+    margin-bottom: 0px;
 }
 
 
@@ -180,16 +187,20 @@ body {
     line-height: normal;
     letter-spacing: 1.6px;
     margin-top: 0px;
-    position: absolute;
+    /* position: absolute; */
     bottom: 10px;
-    left: 150px
+    justify-content: center;
+    /* Horizontal */
+    align-items: center;
+    margin-bottom:10px;
+    margin-top: 0px;
 }
 
 
 
 .game-content div {
-    width: 100px;
-    height: 100px;
+    width: 80%;
+    height: 80%;
     border-radius: 50%;
     margin: 12.5px;
     background-color: #6E6E6E;
