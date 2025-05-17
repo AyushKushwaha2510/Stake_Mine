@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cashOutButton = document.querySelector(".start-game button:last-child");
     // const gameContent = document.querySelector(".game-content");
     const currentWinnings = document.querySelector(".game span");
-    const walletAmount  = document.querySelector(".wallet");
+    const walletAmount = document.querySelector(".wallet");
 
     let winnings = 0;
     let gameStarted = false;
@@ -29,6 +29,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // add image for bomb
+    const bombImage = document.createElement("div");
+    bombImage.className = "bomb";
+    bombImage.src = "bomb.svg";
+    bombImage.style.backgroundsize = 'cover'
+    bombImage.style.width = "100%";
+    bombImage.style.height = "100%";
+
+
+    const gemImage = document.createElement("div");
+    gemImage.className = "gem";
+    gemImage.src = "gem.svg";
+    gemImage.style.backgroundsize = 'cover'
+    gemImage.style.width = "100%";
+    gemImage.style.height = "100%";
+
 
     startButton.addEventListener("click", () => {
         // Get input values from .game-settings-item container
@@ -44,9 +60,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         circles.forEach(circle => {
             circle.addEventListener("click", handleCircleClick);
+        
+        if (totalMines < 1 || totalMines >= circles.length) {
+            alert("Invalid number of mines. Please enter a number between 1 and 24.");
+            return;
+
+        }
+        if (betAmount <= 0 ) {
+            alert("Invalid betting amount. Please enter a number greater than 0.");
+            return;}
         });
     });
     let walletAmt = 0;
+    walletAmount.textContent = `Wallet Amount: $${walletAmt}`;
     cashOutButton.addEventListener("click", () => {
         if (gameStarted) {
             walletAmt += winnings;
@@ -55,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert(`You cashed out with $${winnings}`);
             gameStarted = false;
             winnings = 0;
-            
+
             resetGame(0);
         } else {
             alert("Game not started yet!");
@@ -72,11 +98,14 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             winnings = 0;
             currentWinnings.textContent = `Current Winnings: $${winnings}`;
+            document.getElementById("mineNumber").value = 0;
+            document.getElementById("betAmount").value = 0;
+
         }, time);
     }
 
 
-    
+
     // Handle circle click
     function handleCircleClick(event) {
         if (!gameStarted) return;
