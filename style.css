@@ -109,9 +109,11 @@ body {
     font-size: 16px;
     text-align: center;
 }
-.wallet{
+
+.wallet {
     padding-top: 40px;
 }
+
 .start-game {
     position: absolute;
     bottom: 0px;
@@ -194,7 +196,7 @@ body {
     justify-content: center;
     /* Horizontal */
     align-items: center;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     margin-top: 0px;
 }
 
@@ -209,11 +211,13 @@ body {
     /* fill: #6E6E6E; */
     box-shadow: -2px -2px 9.4px 3px rgba(0, 0, 0, 0.25) inset;
 }
+
 .game-content div:hover {
     background-color: #4d4d4d;
     cursor: pointer;
     box-shadow: -2px -2px 9.4px 3px rgba(0, 0, 0, 0.25) inset;
 }
+
 .footer {
     background-color: #181818;
     color: #FFF;
@@ -238,6 +242,20 @@ body {
     text-decoration: underline;
 }
 
+.temp {
+    background-color: #1C1C1C;
+    width: 72%;
+    height: calc(min(78vh, 1154px));
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+
+}
+
 @media (max-width: 768px) {
     .content {
         width: 95%;
@@ -246,11 +264,12 @@ body {
         display: flex;
         flex-direction: column;
     }
+
     .game-settings {
         top: -40px;
         width: 100%;
         height: 400px;
-        position: relative;       
+        position: relative;
     }
 
     .game-settings-content {
@@ -258,19 +277,22 @@ body {
         flex-direction: row;
         position: relative;
         top: 50px;
-        
-    }.start-game button{
+
+    }
+
+    .start-game button {
         width: 120px;
         height: 50px;
         font-size: 18px;
-        
+
     }
-    .start-game{
+
+    .start-game {
         display: flex;
         flex-direction: row;
     }
-    
-    .game-settings-content :nth-child(3){
+
+    .game-settings-content :nth-child(3) {
         position: absolute;
         top: 80px;
         left: 20px;
@@ -284,7 +306,8 @@ body {
         top: -50px;
 
     }
-    .game span{
+
+    .game span {
         font-size: 20px;
         position: absolute;
         top: 20px;
@@ -300,5 +323,26 @@ body {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(5, 1fr);
+
+    }
+
+    .temp {
+        background-color: #1C1C1C;
+
+
+
+
+        z-index: 2;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        width: 95%;
+        height: 600px;
+        /* position: relative; */
+        display: flex;
+        flex-direction: column;
+
+
     }
 }
