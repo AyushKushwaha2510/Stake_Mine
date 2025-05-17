@@ -51,12 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
         totalMines = minesInput.value;
         betAmount = betInput.value;
         betAmount = parseFloat(betAmount);
-
+        let temp = document.querySelector(".temp");
+        temp.remove();
         //Randomely assign mines
-        assignMines();
-        gameStarted = true;
-        winnings = 0;
-        currentWinnings.textContent = `Current Winnings: $${winnings}`;
         if (totalMines < 1 || totalMines >= circles.length) {
             alert("Invalid number of mines. Please enter a number between 1 and 24.");
             return;
@@ -65,11 +62,17 @@ document.addEventListener("DOMContentLoaded", function () {
         if (betAmount <= 0 ) {
             alert("Invalid betting amount. Please enter a number greater than 0.");
             return;}
+        assignMines();
+        gameStarted = true;
+        winnings = 0;
+        currentWinnings.textContent = `Current Winnings: $${winnings}`;
         
         circles.forEach(circle => {
             circle.addEventListener("click", handleCircleClick);
 
         });
+
+        
     });
     let walletAmt = 0;
     walletAmount.textContent = `Wallet Amount: $${walletAmt}`;
