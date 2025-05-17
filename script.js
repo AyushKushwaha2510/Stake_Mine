@@ -57,10 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
         gameStarted = true;
         winnings = 0;
         currentWinnings.textContent = `Current Winnings: $${winnings}`;
-
-        circles.forEach(circle => {
-            circle.addEventListener("click", handleCircleClick);
-        
         if (totalMines < 1 || totalMines >= circles.length) {
             alert("Invalid number of mines. Please enter a number between 1 and 24.");
             return;
@@ -69,6 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (betAmount <= 0 ) {
             alert("Invalid betting amount. Please enter a number greater than 0.");
             return;}
+        
+        circles.forEach(circle => {
+            circle.addEventListener("click", handleCircleClick);
+
         });
     });
     let walletAmt = 0;
