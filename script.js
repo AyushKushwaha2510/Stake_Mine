@@ -66,42 +66,53 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }, 12000);
 
-        // //preloader
-        // const preloader = document.createElement("div");
-        // preloader.style.position = "fixed";
-        // preloader.style.bottom = "0";
-        // preloader.style.left = "0";
-        // preloader.style.width = "100vw";
-        // preloader.style.height = "100vh";
-        // preloader.style.background = "#1c1c1c";
-        // preloader.style.display = "flex";
-        // preloader.style.alignItems = "center";
-        // preloader.style.justifyContent = "center";
-        // preloader.style.zIndex = "50";
+        //preloader
+        const preloader = document.createElement("div");
+        preloader.style.position = "fixed";
+        preloader.style.bottom = "0";
+        preloader.style.left = "0";
+        preloader.style.width = "100vw";
+        preloader.style.height = "100vh";
+        preloader.style.background = "#1c1c1c";
+        preloader.style.display = "flex";
+        preloader.style.alignItems = "center";
+        preloader.style.justifyContent = "center";
+        preloader.style.zIndex = "50";
 
-        // const preloaderText = document.createElement("span");
-        // preloaderText.style.position = "fixed";
-        // preloaderText.style.bottom = "30px";
-        // preloaderText.style.left = "0";
-        // preloaderText.style.width = "100vw";
-        // preloaderText.style.height = "20vh"
-        // preloaderText.style.background = "#1c1c1c";
-        // preloaderText.style.display = "flex";
-        // preloaderText.style.alignItems = "center";
-        // preloaderText.style.justifyContent = "center";
-        // preloaderText.style.zIndex = "500";
-        // preloaderText.innerHTML = "<span style='font-size:2rem;font-weight:bold;color:#5f5f5f;font-family:sans-serif;letter-spacing:1px;'>Welcome to Stake Mine!<br>Get ready for an exciting adventure... 🚀</span>";
-        // preloaderText.innerHTML.zIndex = "3355";
-        // preloader.appendChild(preloaderText);
+        const preloaderText = document.createElement("span");
+        preloaderText.style.position = "fixed";
+        preloaderText.style.bottom = "30px";
+        preloaderText.style.left = "10px";
+        preloaderText.style.width = "100vw";
+        preloaderText.style.height = "20vh"
+        preloaderText.style.background = "#1c1c1c";
+        preloaderText.style.display = "flex";
+        preloaderText.style.alignItems = "center";
+        preloaderText.style.justifyContent = "center";
+        preloaderText.style.zIndex = "500";
+        preloaderText.innerHTML = "<span style='font-size:2rem;font-weight:bold;color:#5f5f5f;font-family:sans-serif;letter-spacing:1px;'>Welcome to Stake Mine!<br>Get ready for an exciting adventure... 🚀 💣 💎</span>";
+        preloaderText.innerHTML.zIndex = "3355";
+        preloader.appendChild(preloaderText);
 
-        // const preloaderImg = document.createElement("img");
-        // preloaderImg.src = "Shakuni-Blog.jpg"; 
-        // preloaderImg.alt = "Loading...";
-        // preloaderImg.style.width = "50%";
-        // preloaderImg.style.height = "40%";
-        // preloader.appendChild(preloaderImg);
+        const preloaderImg = document.createElement("img");
+        preloaderImg.src = "Shakuni-Blog.jpg";
+        preloaderImg.alt = "Loading...";
+        preloaderImg.style.width = "50%";
+        preloaderImg.style.height = "40%";
+        preloader.appendChild(preloaderImg);
 
-        // document.body.appendChild(preloader);
+        document.body.appendChild(preloader);
+
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        if (mediaQuery.matches) {
+            // If screen width is 768px or less
+            console.log("Mobile view");
+            preloaderImg.style.width = "90%";
+
+            gem.style.width = "80%";
+            gem.style.height = "80%";
+
+        }
 
         setTimeout(() => {
             preloader.remove();
@@ -252,6 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.target.style.backgroundColor = "#262626";
             const gemClone = gem.cloneNode(true);
             event.target.appendChild(gemClone);
+            // event.target.innerHTML = "💎";
             winnings += betAmount; // Increment winnings by bet amount
             currentWinnings.textContent = `Current Winnings: $${winnings}`;
             let audio2 = new Audio('super-mario-coin-sound.mp3');
